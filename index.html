@@ -1,241 +1,162 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pikapiのブログ</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>旅の記録ブログ</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 0;
+            background-color: #f5f5f5;
+        }
 
-<style>
-body{
-    font-family: "Hiragino Kaku Gothic ProN", Arial, sans-serif;
-    background:#f4f6f8;
-    margin:0;
-    line-height:1.6;
-}
+        header {
+            background: #4a90e2;
+            color: white;
+            text-align: center;
+            padding: 30px;
+        }
 
-header{
-    background:#2c7be5;
-    color:white;
-    padding:20px;
-    text-align:center;
-}
+        nav {
+            background: #333;
+            padding: 10px;
+            text-align: center;
+        }
 
-.container{
-    width:90%;
-    max-width:900px;
-    margin:auto;
-    padding:20px;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
 
-.post{
-    background:white;
-    padding:20px;
-    margin-bottom:20px;
-    border-radius:10px;
-    box-shadow:0 2px 6px rgba(0,0,0,0.1);
-}
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+        }
 
-.post h2{
-    margin-top:0;
-}
+        article {
+            background: white;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
 
-.meta{
-    color:#777;
-    font-size:14px;
-}
+        img {
+            width: 100%;
+            border-radius: 10px;
+        }
 
-.photo{
-    width:100%;
-    border-radius:8px;
-    margin:10px 0;
-}
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
 
-.location{
-    background:#eef4ff;
-    padding:10px;
-    border-radius:6px;
-    margin-top:10px;
-}
-
-footer{
-    text-align:center;
-    padding:20px;
-    color:#777;
-}
-</style>
+        .date {
+            color: gray;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
-
 <body>
 
 <header>
-<h1>🌍 Pikapiの旅行記</h1>
-<p>旅の思い出を記録するブログです</p>
+    <h1>旅の記録ブログ</h1>
+    <p>日本中を旅して見つけた景色や思い出を記録します</p>
 </header>
 
-<div class="container">
+<nav>
+    <a href="#">ホーム</a>
+    <a href="#">旅一覧</a>
+    <a href="#">プロフィール</a>
+</nav>
 
-<div class="post">
-<h2>熱海・伊東旅行(日帰り)</h2>
-<p class="meta">📅 2026年3月7日</p>
-<img class="photo" src="DSC_4137.JPG" alt="今日の一枚">
-<p>
-今日はJR東日本のスタンプラリーで熱海方面に行きました。熱海温泉は熱かったですがとっても良く、サフィール踊り子のご飯もすごくおいしかったです！
-</p>
+<input type="text" id="searchBox"
+placeholder="ハッシュタグ検索">
 
-<div class="location">
-📍場所: 熱海駅前温泉<br>
-<a href="https://www.google.co.jp/maps/place/%E7%86%B1%E6%B5%B7%E9%A7%85%E5%89%8D%E6%B8%A9%E6%B3%89%E6%B5%B4%E5%A0%B4/@35.102535,139.078175,19.41z/data=!3m1!5s0x6019be6309d4be93:0xe228f6122ca175f2!4m6!3m5!1s0x6019be6309cc12e3:0xa98ed6dee4e41144!8m2!3d35.1026154!4d139.0783836!16s%2Fg%2F1tcw3p4d?entry=ttu&g_ep=EgoyMDI2MDMxMC4wIKXMDSoASAFQAw%3D%3D" target="_blank">地図を見る</a>
-</div>
-</div>
+<button onclick="searchPosts()">検索</button>
 
-<div class="post">
-<h2>地獄の上総亀山 withfriend</h2>
-<p class="meta">📅 2026年3月14日</p>
+<main>
+       <article class="post" data-tags="大阪 たこ焼き 御堂筋線">
+    <h2>熱海、伊東旅行（日帰り）</h2>
 
-<img class="photo" src="DSC_4145.JPG" alt="今日の一枚">
+    <p>
+        <span class="tag">#熱海</span>
+        <span class="tag">#温泉</span>
+        <span class="tag">#サフィール踊り子</span>
+    </p>
 
-<p>
-この日は上総亀山に行きました。間違えてSuicaのほうのフリーパスを買ってしまい1440円払うことになりました。
-二度と行きたくない。
-あと混みすぎでは
-</p>
+    <h3>乗った駅</h3>
+    <ul>
+        <li>東京駅</li>
+    　　<li>伊東駅</li>
+        <li>熱海駅</li>
+    </ul>
 
-<div class="location">
-📍場所: 上総亀山駅<br>
-<a href="https://www.google.co.jp/maps/place/%E4%B8%8A%E7%B7%8F%E4%BA%80%E5%B1%B1%E9%A7%85/@35.2370814,140.0820126,14.96z/data=!4m14!1m7!3m6!1s0x600109050b426fe1:0x258aca1ce888abc9!2z6YqA6Zaj5a-6!8m2!3d35.0270213!4d135.7982058!16zL20vMDJ5NG05!3m5!1s0x6022a95abbbb55ed:0x41337e23785fe28!8m2!3d35.2330731!4d140.0898405!16s%2Fm%2F06zmb_b?entry=ttu&g_ep=EgoyMDI2MDQwNy4wIKXMDSoASAFQAw%3D%3D">地図を見る</a>
-</div>
-</div>
+    <h3>乗った路線</h3>
+    <ul>
+        <li>東海道新幹線</li>
+        <li>JR伊東線</li>
+        <li>JR東海道線</li>
+    </ul>
 
-<div class="post">
-<h2>ロマンスカーミュージアムでVSEを見る旅</h2>
-<p class="meta">📅 2026年3月20日</p>
-<img class="photo" src="DSC_4154.JPG" alt="今日の一枚">
-<p>
-今日はVSEが展示開始するということで見に行きました(暇人）
-ツアーで乗った通りの姿でかっこよかったです！！</p>
+    <p>
+    今日はJR東日本のスタンプラリーで熱海方面に行きました。熱海温泉は熱かったですがとっても良く、サフィール踊り子のご飯もすごくおいしかったです！
+    </p>
+        <h3>コメント</h3>
 
-<div class="location">
-📍場所: ロマンスカーミュージアム<br>
-<a href="https://www.google.co.jp/maps/place/%E3%83%AD%E3%83%9E%E3%83%B3%E3%82%B9%E3%82%AB%E3%83%BC+%E3%83%9F%E3%83%A5%E3%83%BC%E3%82%B8%E3%82%A2%E3%83%A0/@35.4529125,139.3891011,17.07z/data=!4m14!1m7!3m6!1s0x600109050b426fe1:0x258aca1ce888abc9!2z6YqA6Zaj5a-6!8m2!3d35.0270213!4d135.7982058!16zL20vMDJ5NG05!3m5!1s0x6018552eeeafd9af:0xd861ae8a26a4eca7!8m2!3d35.4530887!4d139.3902136!16s%2Fg%2F11g2529hdj?entry=ttu&g_ep=EgoyMDI2MDQwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">地図を見る</a>
-</div>
-</div>
+<textarea id="commentInput"></textarea>
 
-<div class="post">
-<h2>東武アーバンパークラインで桃鉄旅with friend.</h2>
-<p class="meta">📅 2026年3月25日</p>
-<img class="photo" src="DSC_4191.JPG" alt="今日の一枚">
-<p>
-この日は友達と東武鉄道でやっていたイベントに行ってきました。友達Oさんが1時間も遅れやがりました。時間は守ってほしいですね！
-<div class="location">
-📍場所: 大宮駅<br>
-<a href="https://www.google.co.jp/maps/place/%E5%A4%A7%E5%AE%AE%E9%A7%85/@35.8983913,139.6332074,14.48z/data=!4m6!3m5!1s0x6018c14232d588a3:0x6da62b3257c1539d!8m2!3d35.9060296!4d139.6240123!16s%2Fg%2F122zq8_6?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">地図を見る</a>
-</div>
-</div>
+<button onclick="addComment()">
+コメントする
+</button>
 
+<ul id="commentList"></ul>
 
-<div class="post">
-<h2>引退する芝鉄3500系を見る旅</h2>
-<p class="meta">📅 2026年3月27日</p>
-<img class="photo" src="P3282053.JPG" alt="今日の一枚">
-<p>
-この日は引退する芝山鉄道の3500系を見に行きました！4両はやっぱ短いですね。
-<div class="location">
-📍場所: 京成幕張本郷駅<br>
-<a href="https://www.google.co.jp/maps/place/%E5%B9%95%E5%BC%B5%E6%9C%AC%E9%83%B7%E9%A7%85/@35.673508,140.0425615,16.31z/data=!4m6!3m5!1s0x602281b925b25b99:0xb71f6619adf81333!8m2!3d35.6727454!4d140.042304!16s%2Fm%2F04q29h6?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">地図を見る</a>
-</div>
-</div>
+<script>
+function addComment() {
+    const text =
+        document.getElementById("commentInput")
+        .value;
 
-<div class="post">
-<h2>2025年度のクラスのクラス会</h2>
-<p class="meta">📅 2026年3月30日</p>
-<img class="photo" src="DSC_4207.JPG" alt="今日の一枚">
-<p>
-この日は3組でクラス会をやるということで行ってきました。食事が終わった後も公園で1時間くらい遊んでました。blueSpringですね！あと友達が鉄板にカルピスこぼしてましたwww<div class="location">
-📍場所:粉や　津田沼店<br>
-<a href="https://www.google.co.jp/maps/place/%E9%A3%9F%E3%81%B9%E6%94%BE%E9%A1%8C%E3%83%BB%E9%A3%B2%E3%81%BF%E6%94%BE%E9%A1%8C+%E3%81%8A%E5%A5%BD%E3%81%BF%E7%84%BC%E3%81%8D%E3%83%BB%E3%82%82%E3%82%93%E3%81%98%E3%82%83+%E7%B2%89%E3%82%84+%E6%B4%A5%E7%94%B0%E6%B2%BC%E5%BA%97/@35.6925812,140.0218366,20.32z/data=!3m1!5s0x6022802118e841df:0x4e714524614aa9ed!4m6!3m5!1s0x602280211f2d7283:0xf31ad363bd9a2fa0!8m2!3d35.6927147!4d140.0217239!16s%2Fg%2F11_tk7558?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">地図を見る</a>
-</div>
-</div>
+    if (!text) return;
 
-<div class="post">
-<h2>京王線の新型に乗りに行くよくわからない旅</h2>
-<p class="meta">📅 2026年4月4日</p>
-<img class="photo" src="DSC_4218.JPG" alt="今日の一枚">
-<p>
-今日は相鉄の新型に乗りに行ったのですが走ってなかったので急遽わざわざ調布に行きました。</p>
+    const li =
+        document.createElement("li");
 
-<div class="location">
-📍場所: 笹塚駅<br>
-<a href="https://www.google.co.jp/maps/place/%E7%AC%B9%EF%A8%90%E9%A7%85/@35.6829358,139.6665514,14.56z/data=!4m14!1m7!3m6!1s0x600109050b426fe1:0x258aca1ce888abc9!2z6YqA6Zaj5a-6!8m2!3d35.0270213!4d135.7982058!16zL20vMDJ5NG05!3m5!1s0x6018f317619f76a9:0xbdacf2e83bbe5811!8m2!3d35.673654!4d139.667136!16s%2Fm%2F027220b?entry=ttu&g_ep=EgoyMDI2MDQwNy4wIKXMDSoASAFQAw%3D%3D" target="_blank">地図を見る</a>
-</div>
-</div>
+    li.textContent = text;
 
-<div class="post">
-<h2>新しい塗装の列車を見に行く旅with friend</h2>
-<p class="meta">📅 2026年4月11日</p>
-<img class="photo" src="DSC_4221.JPG" alt="今日の一枚">
-<p>
-この日は新しい塗装の列車が走るということで乗りに行きました！中は何も変化はないですがかっこいいです！</p>
+    document
+        .getElementById("commentList")
+        .appendChild(li);
 
-<div class="location">
-📍場所: 土浦駅<br>
-<a href="https://www.google.co.jp/maps/place/%E5%9C%9F%E6%B5%A6%E9%A7%85/@36.0793113,140.204909,16.27z/data=!4m6!3m5!1s0x60226d35c947aa17:0x8c8f0ca621e79e94!8m2!3d36.0784843!4d140.2062124!16s%2Fg%2F11bc5s521s?entry=ttu&g_ep=EgoyMDI2MDQxNC4wIKXMDSoASAFQAw%3D%3D" target="_blank">地図を見る</a>
-</div>
-</div>
+    document
+        .getElementById("commentInput")
+        .value = "";
+}
+</script>
+    </article>
 
-<div class="post">
-<h2>東葉快速に乗りに行くはずだった旅with friend</h2>
-<p class="meta">📅 2026年4月18日</p>
-<img class="photo" src=".JPG" alt="今日の一枚">
-<p>
-この日は東葉快速が走ると思いこんでいったのに日付を間違えたせいで無駄でした。まあ仕方ないですね^^</p>
+    <article>
+        <h2>京都旅行</h2>
+        <p class="date">2026年5月10日</p>
 
-<div class="location">
-📍場所: 八千代緑ヶ丘駅<br>
-<a href="https://www.google.co.jp/maps/place/%E5%85%AB%E5%8D%83%E4%BB%A3%E7%B7%91%E3%81%8C%E4%B8%98%E9%A7%85/@35.726734,140.0743185,16z/data=!4m6!3m5!1s0x6022809ba3309187:0x1be4be4441e8f0a6!8m2!3d35.72902!4d140.073294!16s%2Fm%2F05fb4vl?entry=ttu&g_ep=EgoyMDI2MDQxOS4wIKXMDSoASAFQAw%3D%3D" target="_blank">地図を見る</a>
-</div>
-</div>
+        <img src="https://picsum.photos/800/400?random=2" alt="旅行写真">
 
-<div class="post">
-<h2>マリオの映画を見た with friend</h2>
-<p class="meta">📅 2026年4月25日</p>
-<img class="photo" src=".JPG" alt="今日の一枚">
-<p>
-この日はマリオの映画を見に行きました！すごかったです！</p>
+        <p>
+            清水寺や伏見稲荷大社を訪れました。
+            歴史ある街並みが印象的でした。
+        </p>
+    </article>
 
-<div class="location">
-📍場所: イオンシネマ幕張新都心<br>
-<a href="https://www.google.co.jp/maps/place/%E3%82%A4%E3%82%AA%E3%83%B3%E3%82%B7%E3%83%8D%E3%83%9E%E5%B9%95%E5%BC%B5%E6%96%B0%E9%83%BD%E5%BF%83/@35.7615751,139.4306276,9z/data=!3m1!5s0x602281f02e46fe59:0xdb78b1e493c9574!4m10!1m2!2m1!1z44Kk44Kq44Oz44K344ON44Oe!3m6!1s0x6022814dac6d0e91:0x39a4d60069fd1cd0!8m2!3d35.6550084!4d140.0299422!15sChLjgqTjgqrjg7Pjgrfjg43jg54iA4gBAZIBDW1vdmllX3RoZWF0ZXLgAQA!16s%2Fg%2F11b7rvyll0?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">地図を見る</a>
-</div>
-</div>
+</main>
 
-<div class="post">
-<h2>福岡旅行</h2>
-<p class="meta">📅 2026年5月2日～5月6日</p>
-<img class="photo" src=".JPG" alt="今日の一枚">
-<p>
-1日目　この日は海の中道水族館にいってきました。ショーすごかった。<br>
-2日目　この日はマリオラッピングされた九州新幹線に乗りました。すごかったです<br>
-3日目　この日は長崎に行きました。移動が一番楽しかったです！
-4日目　この日は九州の鉄道記念館に行きました。運転シュミレーターは75点でした^^</p>
-<div class="location">
-📍場所: （写真の場所）<br>
-<a href="https://www.google.co.jp/maps/place/%E3%82%A4%E3%82%AA%E3%83%B3%E3%82%B7%E3%83%8D%E3%83%9E%E5%B9%95%E5%BC%B5%E6%96%B0%E9%83%BD%E5%BF%83/@35.7615751,139.4306276,9z/data=!3m1!5s0x602281f02e46fe59:0xdb78b1e493c9574!4m10!1m2!2m1!1z44Kk44Kq44Oz44K344ON44Oe!3m6!1s0x6022814dac6d0e91:0x39a4d60069fd1cd0!8m2!3d35.6550084!4d140.0299422!15sChLjgqTjgqrjg7Pjgrfjg43jg54iA4gBAZIBDW1vdmllX3RoZWF0ZXLgAQA!16s%2Fg%2F11b7rvyll0?entry=ttu&g_ep=EgoyMDI2MDUwMi4wIKXMDSoASAFQAw%3D%3D" target="_blank">地図を見る</a>
-</div>
-</div> 
-
-<div class="post">
-<h2>ピカチュウのポストを見に行こう！</h2>
-<p class="meta">📅 2026年5月9日</p>
-<img class="photo" src=".JPG" alt="今日の一枚">
-<p>
-この日は横浜市役所にあるポケモンのポストがなくなると聞いて行ってきました！やっぱりかわいいですね</p>
-<div class="location">
-📍場所: ピカチュウのポスト<br>
-<a href="https://www.google.com/maps/place/%E3%83%9D%E3%82%B1%E3%83%A2%E3%83%B3%E9%83%B5%E4%BE%BF%E3%83%9D%E3%82%B9%E3%83%88+%E3%83%94%E3%82%AB%E3%83%81%E3%83%A5%E3%82%A6%26%E3%82%A4%E3%83%BC%E3%83%96%E3%82%A4/@35.4508374,139.6357075,18.01z/data=!3m1!5s0x60185cf61e055941:0xedd3576f15363320!4m6!3m5!1s0x60185dda344281e5:0x1811d3a6009d2abb!8m2!3d35.4505766!4d139.6350405!16s%2Fg%2F11rsflbprn?entry=ttu&g_ep=EgoyMDI2MDUxMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">地図を見る</a>
-</div>
-</div>        
 <footer>
-<p>©Pikapiのブログ制作委員会(ワンオペ)</p>
+    <p>&copy; 2026 旅の記録ブログ</p>
 </footer>
 
 </body>
